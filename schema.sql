@@ -6,8 +6,11 @@ create table if not exists public.users (
   id uuid primary key default gen_random_uuid(),
   display_name text,
   email text,
+  password_hash text not null,
   created_at timestamptz not null default now()
 );
+
+create index if not exists users_email_idx on public.users (email);
 
 -- Mood table
 create table if not exists public.mood_entries (

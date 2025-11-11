@@ -73,26 +73,50 @@ npm run dev
 
 ## User APIs
 
-### Create User (Register)
+### Register
 
 ```
-POST http://localhost:4000/api/v1/users
+POST http://localhost:4000/api/v1/users/register
 ```
 body
 ```json
 {
-  "display_name": "Qiao",
-  "email": "qiao@test.com"
+  "email": "test_regiester@example.com",
+  "display_name": "Test User",
+  "password": "123abc"
 }
 ```
 response
 ```json
 {
     "user": {
-        "id": "bb3afabb-bf64-4b8a-81dc-0fb32e0794f3",
-        "display_name": "Qiao",
-        "email": "qiao@test.com",
-        "created_at": "2025-11-11T22:27:22.440651+00:00"
+        "id": "878b11ed-bb3e-4474-a1e8-c1ca70c00792",
+        "email": "test_regiester@example.com",
+        "display_name": "Test User",
+        "created_at": "2025-11-11T23:14:28.01927+00:00"
+    }
+}
+```
+
+### Login
+
+```
+POST http://localhost:4000/api/v1/users/login
+```
+body
+```json
+{
+  "email": "test_regiester@example.com",
+  "password": "123abc"
+}
+```
+response
+```json
+{
+    "user": {
+        "id": "878b11ed-bb3e-4474-a1e8-c1ca70c00792",
+        "email": "test_regiester@example.com",
+        "display_name": "Test User"
     }
 }
 ```
