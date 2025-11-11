@@ -5,6 +5,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 
 import moodsRouter from './routes/moods.js';
+import usersRouter from './routes/users.js';
 
 const app = express();
 const port = process.env.PORT ? Number(process.env.PORT) : 4000;
@@ -17,6 +18,8 @@ const corsOrigins = (process.env.CORS_ORIGINS || '*').split(',');
 app.use(cors({ origin: corsOrigins, credentials: true }));
 
 app.get('/health', (_, res) => res.json({ ok: true }));
+
+app.use('/api/v1/users', usersRouter);
 
 app.use('/api/v1/moods', moodsRouter);
 

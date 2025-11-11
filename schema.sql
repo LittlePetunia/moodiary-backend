@@ -1,6 +1,15 @@
 create extension if not exists "uuid-ossp";
 create extension if not exists "pgcrypto";
 
+-- Users table
+create table if not exists public.users (
+  id uuid primary key default gen_random_uuid(),
+  display_name text,
+  email text,
+  created_at timestamptz not null default now()
+);
+
+-- Mood table
 create table if not exists public.mood_entries (
   id uuid primary key default gen_random_uuid(),
   user_id uuid,
