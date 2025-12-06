@@ -1,10 +1,13 @@
 # Moodiary Backend
 
-This is the backend for the Moodiary mobile app.  
-This version removes authentication so the API is easy to test during early development.
-All mood data is stored under a single test user ID from the `.env` file.
+This is the backend for the Moodiary mobile app ECE 1724 Project.  
 
-Once frontend UI is stable, authentication can be added back later.
+## Frontend Repository
+https://github.com/aaron6yi/moodiary
+
+## Deployment Information
+
+Download .APK https://drive.google.com/file/d/1wLF1SrdOGTkpr2U0j_kWNCJ7Bwt2VicB/view
 
 ## Tech Stack
 | Layer | Technology |
